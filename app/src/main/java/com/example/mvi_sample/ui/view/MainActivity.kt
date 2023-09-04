@@ -1,4 +1,4 @@
-package com.example.mvi_sample.ui
+package com.example.mvi_sample.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
