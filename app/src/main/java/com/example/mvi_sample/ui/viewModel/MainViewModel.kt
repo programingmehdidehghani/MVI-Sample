@@ -21,6 +21,10 @@ class MainViewModel (
    val state: StateFlow<MainState>
    get() = _state
 
+    init {
+        handleIntent()
+    }
+
 
    private fun handleIntent() {
      viewModelScope.launch {
