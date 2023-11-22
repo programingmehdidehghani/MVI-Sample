@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupClicks() {
         viewBinding.buttonFetchUser.setOnClickListener {
             lifecycleScope.launch {
-                mainViewModel.userIntent.send(MainIntent.FetchUser)
+                mainViewModel.userIntent.send(MainIntent.FetchUser123)
             }
         }
     }
