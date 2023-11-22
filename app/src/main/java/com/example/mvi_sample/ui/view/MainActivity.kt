@@ -38,13 +38,14 @@ class MainActivity : AppCompatActivity() {
         setupViewModel()
         observeViewModel()
         setupClicks()
-        print("change1")
+        print("mehdi")
+
     }
 
     private fun setupClicks() {
         viewBinding.buttonFetchUser.setOnClickListener {
             lifecycleScope.launch {
-                mainViewMuserIntent.send(MainIntent.FetchUser)
+                MainIntent.send(MainIntent.FetchUser)
             }
         }
     }
