@@ -40,6 +40,8 @@ class MainActivity : AppCompatActivity() {
         setupClicks()
         print("massod")
         print("change1")
+        print("mehdi")
+
     }
 
     private fun setupClicks() {
