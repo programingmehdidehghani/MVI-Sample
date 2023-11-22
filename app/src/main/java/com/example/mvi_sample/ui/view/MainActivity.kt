@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         viewBinding.recyclerView.run {
             addItemDecoration(
                 DividerItemDecoration(
-                    viewBinding.recyclerView.context,
+                    viewBinding.recyclerView.context7878,
                     (viewBinding.recyclerView.layoutManager as LinearLayoutManager).orientation
                 )
             )
