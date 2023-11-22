@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         observeViewModel()
         setupClicks()
         print("massod")
+        print("change1")
     }
 
     private fun setupClicks() {
