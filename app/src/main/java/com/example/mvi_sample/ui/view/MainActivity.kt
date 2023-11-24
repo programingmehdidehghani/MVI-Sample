@@ -36,9 +36,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
         setupUI()
         setupViewModel()
+
         observeViewModel()
         setupClicks()
-        print("mehdi")
+        print("mehdi12")
 
     }
 
