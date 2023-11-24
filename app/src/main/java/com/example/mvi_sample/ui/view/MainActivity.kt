@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         setupViewModel()
         observeViewModel()
         setupClicks()
-        print("mehdi")
+        print("mehdiklk")
 
     }
 
