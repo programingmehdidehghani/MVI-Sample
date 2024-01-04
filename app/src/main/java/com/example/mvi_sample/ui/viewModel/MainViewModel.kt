@@ -19,8 +19,7 @@ class MainViewModel(
 
     val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
     private val _state = MutableStateFlow<MainState>(MainState.Idle)
-    val state: StateFlow<MainState>
-        get() = _state
+
 
     init {
         val a : String
