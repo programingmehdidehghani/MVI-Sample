@@ -10,41 +10,43 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
+import kotlin.coroutines.suspendCoroutine
 
-class MainViewModel (
-  private val repository: MainRepository
-  ): ViewModel() {
+class MainViewModel(
+    private val repository: MainRepository
+) : ViewModel() {
 
 
-   val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
-   private val _state = MutableStateFlow<MainState>(MainState.Idle)
-   val state: StateFlow<MainState>
-   get() = _state
+    val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
+    private val _state = MutableStateFlow<MainState>(MainState.Idle)
+    val state: StateFlow<MainState>
+        get() = _state
 
     init {
-        handleIntent()
+        val a : String
     }
 
 
-   private fun handleIntent() {
-     viewModelScope.launch {
-     userIntent.consumeAsFlow().collect {
-     when (it) {
-     is MainIntent.FetchUser -> fetchUser()
-      }
+    private fun handleIntent() {
+        viewModelScope.launch {
+            userIntent.consumeAsFlow().collect {
+                when (it) {
+                    is MainIntent.FetchUser -> fetchUser()
+                }
+            }
+        }
     }
-   }
- }
 
- private fun fetchUser() {
-  viewModelScope.launch {
-   _state.value = MainState.Loading
-   _state.value = try {
-    MainState.Users(repository.getUsers())
-   } catch (e: Exception) {
-    MainState.Error(e.localizedMessage)
-   }
-  }
- }
+    private fun fetchUser() {
+        viewModelScope.launch {
+            _state.value = MainState.Loading
+            _state.value = try {
+                MainState.Users(repository.getUsers())
+            } catch (e: Exception) {
+                MainState.Error(e.localizedMessage)
+            }
+        }
+    }
+
 
 }
