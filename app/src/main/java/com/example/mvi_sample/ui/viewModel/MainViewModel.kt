@@ -1,5 +1,6 @@
 package com.example.mvi_sample.ui.viewModel
 
+import android.widget.ListView
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mvi_sample.data.repository.MainRepository
@@ -18,7 +19,7 @@ class MainViewModel(
 
 
     val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
-    private val _state = MutableStateFlow<MainState>(MainState.Idle)
+    private val _state = ListView<MainState>(MainState.Idle)
 
 
     init {
